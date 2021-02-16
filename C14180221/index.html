@@ -5,5 +5,26 @@
     <body>
         <h4>C14180221</h4>
         <h4>Katherine Putri Sutjiadi</h4>
+
+        <p id="today"></p>
+        Pick a date: <input type="date" id="date" name="date">
+        <button type="button" onclick="count()">Count</button>
+        <p id="res"></p>
     </body>
+
+    <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("today").innerHTML = "Today date: " + d + "/" + m + "/" + y;
+        
+        function count() 
+        {
+            var date1 = new Date (document.getElementById("date").value);
+            var today = new Date();
+            var result = Math.floor((date1 - today) / (1000 * 60 * 60 * 24));
+            document.getElementById("res").innerHTML = " Result: " + result;
+        }
+    </script>
 </html>
