@@ -7,5 +7,28 @@
         <h4>Katherine Putri Sutjiadi</h4>
 
         <p>Tambahkan dua buahhhhhhhh</p>
+        <p id="today"></p>
+        Pick a date 1: <input type="date" id="date" name="date"><br>
+        Pick a date 2: <input type="date" id="date2" name="date2"><br>
+        <button type="button" onclick="count()">Count</button>
+        <p id="res"></p>
+
+        <p>Yang didapatkan dari git: function dan kegunaan git untuk project:)</p>
     </body>
+
+    <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("today").innerHTML = "Today date: " + d + "/" + m + "/" + y;
+        
+        function count() 
+        {
+            var date1 = new Date (document.getElementById("date").value);
+            var date2 = new Date (document.getElementById("date2").value);
+            var result = Math.floor((date2 - date1) / (1000 * 60 * 60 * 24));
+            document.getElementById("res").innerHTML = " Result: " + result;
+        }
+    </script>
 </html>
