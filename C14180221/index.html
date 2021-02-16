@@ -7,7 +7,8 @@
         <h4>Katherine Putri Sutjiadi</h4>
 
         <p id="today"></p>
-        Pick a date: <input type="date" id="date" name="date">
+        Pick a date 1: <input type="date" id="date" name="date"><br>
+        Pick a date 2: <input type="date" id="date2" name="date2"><br>
         <button type="button" onclick="count()">Count</button>
         <p id="res"></p>
     </body>
@@ -22,8 +23,8 @@
         function count() 
         {
             var date1 = new Date (document.getElementById("date").value);
-            var today = new Date();
-            var result = Math.floor((date1 - today) / (1000 * 60 * 60 * 24));
+            var date2 = new Date (document.getElementById("date2").value);
+            var result = Math.floor((date2 - date1) / (1000 * 60 * 60 * 24));
             document.getElementById("res").innerHTML = " Result: " + result;
         }
     </script>
